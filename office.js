@@ -2,7 +2,21 @@
 //Psuedo code:
 // needs a call to action to "start quiz" (alert and button)
 
-var startQuiz = alert ("Please click start button to begin quiz");
+function quizTime () {
+    var questionArray = [];
+
+}
+
+var startQuiz = document.getElementById ("Start");
+startQuiz.addEventListener("click", function()) {
+  var questionsStart = 
+}
+  quiztime(questions);
+
+//if statement?
+
+
+
 
 //need to build a high score page and a timer that starts at 75 seconds (increments, count++)
 

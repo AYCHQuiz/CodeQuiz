@@ -2,25 +2,42 @@
 //Psuedo code:
 // needs a call to action to "start quiz" (alert and button)
 
-function quizTime () {
-    var questionArray = [];
+var questionsQuiz = document.getElementById("quiz");
+var questionSelect = document.getElementById("select");
+var questionSubmit = document.getElementById("submit");
 
-}
+var startQuiz = document.getElementById("start");
 
-var startQuiz = document.getElementById ("Start");
-startQuiz.addEventListener("click", function()) {
-  var questionsStart = 
-}
-  quiztime(questions);
+// variableName.addEventListener(arg1, arg2)
+// variableName.addEventListener(what we listen to, what we do)
+var score = 0;
+
+  // quiztime(questions);
+  function quizTime(){
+
+    for (var i = 0; i <questions.length; i++) {
+      console.log(questions[i])
+    }
+
+  };
+
+  startQuiz.addEventListener("click", quizTime);
 
 //if statement?
 
 
-
+function getNewQuestion (questionIndex){
+document.getElementById("question").innerText = questions[questionIndex].title;
+document.getElementById("answer1").innerText = questions[questionIndex].choices[0];
+document.getElementById("answer2").innerText = questions[questionIndex].choices[1];
+document.getElementById("answer3").innerText = questions[questionIndex].choices[2];
+document.getElementById("answer4").innerText = questions[questionIndex].choices[3];
+}
+getNewQuestion(1);
 
 //need to build a high score page and a timer that starts at 75 seconds (increments, count++)
 
-//needs a onclick event to start the quiz (make a button also) and then the questions will appear
+//needs a onclick event to start the quiz (make a button also) and then the questions will appear.  Need to have a click event for the answer button to show the next question
 //timer needs to start as soon as the question appears.  Make sure the timer is given a max amount of time for the user to click an answer and count downwards
 
 //start calculating the score incrementally when the user gets a right answer ; create an alert on the page that tells you if the answer is right or wrong

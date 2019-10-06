@@ -2,38 +2,91 @@
 //Psuedo code:
 // needs a call to action to "start quiz" (alert and button)
 
-var questionsQuiz = document.getElementById("quiz");
+var questionQuiz = document.getElementById("quiz");
 var questionSelect = document.getElementById("select");
-var questionSubmit = document.getElementById("submit");
+var questionSubmit = document.getElementById("results");
 
 var startQuiz = document.getElementById("start");
+var submitAnswer = document.getElementById("select");
 
 // variableName.addEventListener(arg1, arg2)
 // variableName.addEventListener(what we listen to, what we do)
 var score = 0;
+var secondsLeft = 75;
 
-  // quiztime(questions);
-  function quizTime(){
+// quiztime(questions);
+function quizTime() {
 
-    for (var i = 0; i <questions.length; i++) {
-      console.log(questions[i])
-    }
+  for (var i = 0; i < questions.length; i++) {
+    console.log(questions[i])
+  }
 
-  };
+};
 
-  startQuiz.addEventListener("click", quizTime);
+startQuiz.addEventListener("click", quizTime);
 
-//if statement?
+function getNewQuestion() {
+  var question = questions[0];
+  var title = question.title;
+  console.log(title);
+  var questionEl = document.getElementById("question");
+  questionEl.innerText = title;
+
+  var choice1 = question.choices[0];
+  var answerEl1 = document.getElementById("answer1");
+  answerEl1.innerText = choice1;
+  console.log(choice1);
+
+  var choice2 = question.choices[1];
+  var answerEl2 = document.getElementById("answer2");
+  answerEl2.innerText = choice2;
+  console.log(choice2);
+
+  var choice3 = question.choices[2];
+  var answerEl3 = document.getElementById("answer3");
+  answerEl3.innerText = choice3;
+  console.log(choice3);
+
+  var choice4 = question.choices[3];
+  var answerEl4 = document.getElementById("answer4");
+  answerEl4.innerText = choice4;
+  console.log(choice4);
 
 
-function getNewQuestion (questionIndex){
-document.getElementById("question").innerText = questions[questionIndex].title;
-document.getElementById("answer1").innerText = questions[questionIndex].choices[0];
-document.getElementById("answer2").innerText = questions[questionIndex].choices[1];
-document.getElementById("answer3").innerText = questions[questionIndex].choices[2];
-document.getElementById("answer4").innerText = questions[questionIndex].choices[3];
+  document.getElementById("question").innerText = title;
+  document.getElementById("answer1").innerText = choice1;
+  document.getElementById("answer2").innerText = choice2;
+  document.getElementById("answer3").innerText = choice3;
+  document.getElementById("answer4").innerText = choice4;
+
+
+  submitAnswer.addEventListener("click", quizTime);
+
+  if (choice1 === questions.answer) {
+    alert("You are correct!")
+  }
+  else if (choice2 === questions.answer) {
+    alert("You are correct!")
+  }
+  else if (choice3 === questions.answer) {
+    alert("You are correct!")
+  }
+  else if (choice4 === questions.answer) {
+    alert("You are correct!")
+  }
+
 }
-getNewQuestion(1);
+getNewQuestion(
+
+);
+
+
+
+//user needs to click a button and hit submit
+//when submit is hit then it goes through a loop
+quizTime(
+
+)
 
 //need to build a high score page and a timer that starts at 75 seconds (increments, count++)
 

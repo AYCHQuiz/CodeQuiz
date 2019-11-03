@@ -3,8 +3,9 @@
 // needs a call to action to "start quiz" (alert and button)
 
 var questionQuiz = document.getElementById("quiz");
-var submitAnswer = document.getElementById("select");
 var questionSubmit = document.getElementById("results");
+var score = document.getElementById("score");
+var timer = document.getElementById("timer");
 
 var startQuiz = document.getElementById("start");
 
@@ -12,7 +13,8 @@ var startQuiz = document.getElementById("start");
 // variableName.addEventListener(what we listen to, what we do)
 var score = 0;
 var secondsLeft = 75;
-
+var currentQuestionIndex = 0;
+// whatTheUserClicked = a string ""
 function goToNextQuestion(whatTheUserClicked) {
   var correctText = questions[currentQuestionIndex].answer;
 
@@ -83,24 +85,13 @@ function getNewQuestion(questionIndex) {
   document.getElementById("answer4").innerText = choice4;
 
 
-
-
-  if (choice1 === questions.answer) {
-    alert("You are correct!")
-  }
-  else if (choice2 === questions.answer) {
-    alert("You are correct!")
-  }
-  else if (choice3 === questions.answer) {
-    alert("You are correct!")
-  }
-  else if (choice4 === questions.answer) {
-    alert("You are correct!")
-  }
-
 }
 //submitAnswer.addEventListener("click", quizTime);
-var currentQuestionIndex = 0;
+function scoreKeeper(){
+  document.getElementById("score").innerHTML = count++;
+
+}
+scoreKeeper();
 // getNewQuestion(currentQuestionIndex);
 
 //user needs to click a button and hit submit
